@@ -4,8 +4,37 @@
 //
 // Configurar en Vercel:  Settings → Environment Variables → ANTHROPIC_API_KEY
 
-const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6';
+const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5';
 const MAX_TOKENS = 300;
+
+// Límite de peticiones por IP: protege contra scripts que llamen al
+// endpoint en bucle. Vive en memoria del proceso serverless, así que
+// no es perfecto (cada instancia fría tiene su propio contador), pero
+// frena el abuso automatizado sin fricción para visitantes normales.
+// El límite real y a prueba de fallos es el tope de gasto en la
+// consola de Anthropic.
+const RATE_LIMIT_MAX = 20; // mensajes
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // por 10 minutos
+const hits = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const record = hits.get(ip);
+  if (!record || now - record.windowStart > RATE_LIMIT_WINDOW_MS) {
+    hits.set(ip, { windowStart: now, count: 1 });
+    return false;
+  }
+  record.count += 1;
+  return record.count > RATE_LIMIT_MAX;
+}
+
+// Evita que `hits` crezca sin límite en una instancia de larga vida.
+function pruneOldEntries() {
+  const now = Date.now();
+  for (const [ip, record] of hits) {
+    if (now - record.windowStart > RATE_LIMIT_WINDOW_MS) hits.delete(ip);
+  }
+}
 
 const SYSTEM = `Eres Luna, la asistente de ventas de Glow Lab, una tienda mexicana de cosméticos que vende por WhatsApp.
 
@@ -45,6 +74,12 @@ export default async function handler(req, res) {
     // La landing detecta el error y usa su guion local de respaldo.
     return res.status(503).json({ error: 'ANTHROPIC_API_KEY no configurada' });
   }
+
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Demasiados mensajes. Intenta de nuevo en unos minutos.' });
+  }
+  if (Math.random() < 0.05) pruneOldEntries();
 
   try {
     const incoming = Array.isArray(req.body?.messages) ? req.body.messages : [];
