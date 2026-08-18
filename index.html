@@ -286,7 +286,7 @@ h3{font-size:clamp(1.15rem,2vw,1.45rem)}
 
 /* ---------- servicios ---------- */
 .services{background:var(--arena)}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:22px;margin-top:52px;align-items:start}
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px;align-items:start}
 .plan{
   background:#fff;border:1px solid rgba(15,43,43,.11);border-radius:var(--r);
   padding:34px 30px;display:flex;flex-direction:column;height:100%;
@@ -299,11 +299,15 @@ h3{font-size:clamp(1.15rem,2vw,1.45rem)}
   font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   padding:6px 15px;border-radius:999px;
 }
+.plan-icon{font-size:2rem;line-height:1;margin-bottom:14px}
 .plan h3{color:var(--petroleo);margin-bottom:8px}
 .plan-sub{font-size:.87rem;color:var(--tinta-mid);margin:0 0 24px;min-height:42px}
 .price{display:flex;align-items:baseline;gap:7px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--arena);flex-wrap:wrap}
+.price-from{width:100%;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--jade)}
 .price .amt{font-family:var(--serif);font-size:2.35rem;font-weight:700;color:var(--petroleo);letter-spacing:-.02em;line-height:1}
 .price .per{font-size:.83rem;color:var(--tinta-mid);font-weight:500}
+.plan-setup{font-size:.82rem;color:var(--tinta-mid);margin:-14px 0 22px}
+.plan-setup strong{color:var(--petroleo);font-weight:700}
 .plan ul{list-style:none;margin:0 0 28px;padding:0;flex:1}
 .plan li{display:flex;gap:11px;padding:8px 0;font-size:.9rem;color:var(--tinta)}
 .plan li svg{width:16px;height:16px;flex:none;margin-top:4px;color:var(--jade)}
@@ -472,6 +476,7 @@ h3{font-size:clamp(1.15rem,2vw,1.45rem)}
   .burger{display:flex}
   .stats{grid-template-columns:1fr 1fr}
   .cost{flex-direction:column;align-items:flex-start;gap:12px}
+  .plans{grid-template-columns:1fr}
 }
 @media (max-width:520px){
   .wrap{padding:0 18px}
@@ -787,21 +792,36 @@ h3{font-size:clamp(1.15rem,2vw,1.45rem)}
       </article>
 
       <article class="plan reveal">
-        <h3>Redes en Piloto Automático</h3>
-        <p class="plan-sub">Contenido planeado, escrito y publicado sin que tú lo pienses.</p>
-        <div class="price"><span class="amt">$799</span><span class="per">MXN / mes</span></div>
+        <h3>Tu contenido que crece solo</h3>
+        <p class="plan-sub">Posts, carruseles y guiones de Reels listos cada semana. Tu equipo graba con el celular — nosotros generamos el guión segundo a segundo, el caption, los hashtags y programamos la publicación automática.</p>
+        <div class="price"><span class="price-from">Desde</span><span class="amt">$1,499</span><span class="per">MXN / mes</span></div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Calendario semanal completo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Textos y hashtags listos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Imágenes generadas o diseñadas</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Publicación programada automática</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Reporte mensual de alcance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 7 posts semanales generados y publicados automáticamente</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 3 guiones de Reels listos para grabar cada semana</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Caption, hashtags y música sugerida incluidos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Instrucciones de grabación para tu equipo sin experiencia</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Publicación automática en los mejores horarios</li>
         </ul>
         <a href="#contacto" class="btn btn-ghost">Quiero este</a>
         <p class="plan-pay">¿Ya decidiste? <a href="https://mpago.la/14ZeEA2" target="_blank" rel="noopener">Paga tu suscripción →</a></p>
       </article>
+
+      <article class="plan featured reveal">
+        <div class="plan-icon" aria-hidden="true">🚀</div>
+        <h3>Bundle CORLAVO — todo incluido</h3>
+        <p class="plan-sub">WhatsApp que atiende solo + tienda Shopify profesional + contenido semanal automático. El sistema completo para que tu negocio funcione aunque no estés.</p>
+        <div class="price"><span class="price-from">Desde</span><span class="amt">$3,499</span><span class="per">MXN / mes</span></div>
+        <p class="plan-setup">+ <strong>$8,000 MXN</strong> de instalación única</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Todo lo de los tres servicios anteriores</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Integración completa entre WhatsApp, tienda y redes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dashboard semanal de ventas generadas por el sistema</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Soporte prioritario en español — respuesta en menos de 2 horas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Garantía de 30 días completa</li>
+        </ul>
+        <a href="#contacto" class="btn btn-ambar">Quiero este</a>
+      </article>
     </div>
-    <p class="plan-note reveal">¿Quieres los tres? Te armamos un paquete. Escríbenos y lo vemos en la llamada.</p>
   </div>
 </section>
 
