@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 48" role="img" aria-label="CORLAVO">
+  <path fill="#FFFFFF" d="M13 5h22a9 9 0 0 1 9 9v13a9 9 0 0 1-9 9H24.5L15 43.2c-.9.7-2.2.1-2.2-1V36H13a9 9 0 0 1-9-9V14a9 9 0 0 1 9-9Z"/>
+  <path fill="none" stroke="#0B2A4A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="m15.5 21 6 6 11-11.5"/>
+  <text x="58" y="32" font-family="'Plus Jakarta Sans','Inter',Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="3.4" fill="#FFFFFF">CORLAVO</text>
+</svg>
