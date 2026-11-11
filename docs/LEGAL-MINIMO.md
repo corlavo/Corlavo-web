@@ -10,8 +10,8 @@ Cuando entre el primer pago, pagar UNA revisión puntual de `terminos.html` y `a
 4. **Todo por escrito.** Antes de empezar, confirmar paquete por WhatsApp/correo.
 5. **La clínica aprueba sus anuncios** (publicidad de salud es su responsabilidad).
 
-## Antes de publicar el sitio (pendiente de ti)
-- Completar en `aviso-de-privacidad.html` y `terminos.html`: nombre o razón social, domicilio (la ley lo pide en el aviso), fecha.
+## Datos del responsable (completados 11 nov 2026)
+- Persona física con nombre comercial CORLAVO; domicilio en el aviso. El RFC no se publica en el sitio.
 
 ## Mensaje para cerrar un cliente (copiar y pegar por WhatsApp o correo)
 > Hola [Nombre]. Para arrancar confirmo lo acordado:
