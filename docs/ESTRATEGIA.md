@@ -38,7 +38,7 @@ citas, agenda, sillón, inasistencias, recordatorios, reseñas). Tuteo profesion
 | **Agenda Inteligente** (destacado) | $9,900 | $3,900 |
 | Crecimiento (+ anuncios) | $14,900 | $7,900 |
 
-Condiciones: mes a mes · 7–14 días de implementación · garantía de 60 días
+Condiciones: mes a mes · 7–14 días de implementación · sin permanencia (la garantía de 60 días se quitó por riesgo legal)
 (texto editable, lo revisará un abogado) · Programa Clínicas Fundadoras: 5
 clínicas con 40 % de descuento en instalación a cambio de caso de estudio.
 
@@ -59,6 +59,6 @@ propuestas, se implementa la #1.
 1. Las cifras del sector (DENUE, Scrap.io) y los precios de tratamientos vienen del prompt; confirmar con la fuente original.
 2. **Datos de salud:** en la LFPDPPP los datos de salud son sensibles y exigen consentimiento expreso; el aviso de privacidad debe ser revisado por un abogado.
 3. **Publicidad de servicios de salud:** revisar si aplican reglas de COFEPRIS a los anuncios y promesas del sitio.
-4. **Garantía** ("el mes siguiente es gratis"): redacción y condiciones con abogado.
+4. ~~Garantía de 60 días~~: eliminada; se sustituyó por "Tus cuentas, tus datos". Ver `docs/LEGAL-MINIMO.md`.
 5. **WhatsApp API oficial:** requiere proveedor autorizado y verificación del negocio; los costos de Meta no están incluidos en los precios.
 6. El asistente **no diagnostica ni da consejo clínico**; solo información orientativa y agenda.
